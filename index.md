@@ -5,7 +5,7 @@ I was looking at the internet today, and found some pretty amazing things, got e
 swiming in a bit too much information.
 
 SO, naturally, I kept reading around the internet, and started going through Julia Evans' posts at
-jvns.ca. I had met her briefly at polyconf in 2016, the very first conferance that I attended that
+[jvns.ca](jvns.ca). I had met her briefly at polyconf in 2016, the very first conferance that I attended that
 was a proper conference (the previous one being chaos communication camp which is pretty neat).
 Anyway, Julia left a strong impression on me. Her talk was exciting, and incredibly informative. And
 here I was, two years later, looking at her blog and thinking "I wish I could keep so much stuff in
@@ -29,7 +29,7 @@ tell you!
 Here is an example c program that isn't doing quite what it should:
 
 leak.c
-```
+```c
 #include <stdlib.h>
 
 int main() {
@@ -86,7 +86,7 @@ and we will get this output
 This output doesn't seem entirely useful. It tells us which command we ran, and also that there was
 1 allocation of 4 bytes that were definately lost. We don't know where though, and what are all of
 these numbers (I asked, it is the process id, this info can be found
-[here][http://valgrind.org/docs/manual/manual-core.html] at 2.3. This is a useful page)?
+[here](http://valgrind.org/docs/manual/manual-core.html) at 2.3. This is a useful page)?
 
 But this message also gives a hint, at the bottom of the `LEAK SUMMARY`. We can rerun our command with `--leak-check=full` to see details
 
@@ -126,10 +126,10 @@ Now we have some more information. The heap summary tells us that:
 ==30434==    by 0x10865B: main (leaks.c:4)
 ```
 
-Awesome. We not only know the file where the memory was allocated, we know the line. We even know the function. AMAZINGG!
+Awesome. We not only know the file where the memory was allocated, we know the line. We even know the function. AMAZING!
 
 I didn't realize at the time, but you can use valgrind when developing firefox, and
 thats how we get information about memory leaks! This is so neat, because now I can run my tests
-with valgrind directly! [information on that can be found here][https://developer.mozilla.org/en-US/docs/Mozilla/Testing/Valgrind]
+with valgrind directly! [information on that can be found here](https://developer.mozilla.org/en-US/docs/Mozilla/Testing/Valgrind)
 
 
