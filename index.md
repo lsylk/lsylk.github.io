@@ -20,9 +20,9 @@ As a way to start I think I will try just writing what I learned about recently 
 excited about.
 
 ### How about Valgrind!
-This seems like a good place to start:
-
-Valgrind is super exciting. It's a way of understanding what is happening with your memory in your
+Valgrind is very exciting. It acts as an intermediate between your program and your CPU in order to
+give you more information about your program than what your computer could provide by itself with
+existing tools. It's a way of understanding what is happening with your memory in your
 application. For example, if you are writing some c code that doesn't properly free memory, it will
 tell you!
 
@@ -40,19 +40,18 @@ int main() {
 }
 ```
 
-If you aren't familiar with c, we can compile our file using a compiler like gcc via `gcc -g
-leak.c`. The `-g` flag will tell the compiler to add symbolic debugger info, which helps debuggers
-like valgrind do what they do! This way, a debugger can tell you which source file and line number
-have a problem, rather than just that there is a problem! Also. I have no idea how to write C and
-this is one of my first programs :sweat_smile:
+If you aren't familiar with c, like me, we can compile our file using a compiler like gcc via `gcc -g
+leaks.c`. The `-g` flag will tell the compiler to add symbolic debugger info, which helps debuggers
+like Valgrind do what they do! This way, a debugger can tell you which source file and line number
+have a problem, rather than just that there is a problem! This is my first program in C so it might
+not be the best example but it illustrates what is going on 😅
 
-With `gcc -g leak.c` we will get a result called `a.out`.
+With `gcc -g leaks.c` we will get a result called `a.out`.
 Neat, so we have our buggy program. It compiles ok, and it also runs. But something is wrong. Let's
-see what valgrind has to say.
+see what Valgrind has to say.
 
-valgrind is sort of a virtual machine that runs your program and gives you back information that you don't
+As mentioned above, Valgrind is sort of a virtual machine that runs your program and gives you back information that you don't
 get from running the program on a regular system.
-
 
 You can run valgrind like so:
 
@@ -145,7 +144,7 @@ int main() {
 ```
 
 Then we can recompile it with `gcc -g leaks-fixed.c` and run it with `valgrind --leak-check=full
-a.out` to see the output:
+./a.out` to see the output:
 
 ```
 ==30525== Memcheck, a memory error detector
@@ -170,11 +169,11 @@ program!
 
 Since C is a new language for me, you might have noticed that this program is a bit simplistic. For
 example, does it matter that the memory wasn't freed? The program terminated immediately. And that
-is true! This is a formality, but a good one to follow from what I understand. And lets see about a more complex example
-debugging memory issues in the future as I get more familiar with both C and valgrind :).
+is true! This is a formality, but a good one to follow from what I understand. And let's see about a more complex example
+debugging memory issues in the future as I get more familiar with both C and Valgrind :).
 
-I didn't realize at the time, but you can use valgrind when developing firefox, and
+I didn't realize at the time, but you can use Valgrind when developing Firefox, and
 that's how we get information about memory leaks! This is so neat, because now I can run my tests
-with valgrind directly! [Information on that can be found here](https://developer.mozilla.org/en-US/docs/Mozilla/Testing/Valgrind)
+with Valgrind directly! [Information on that can be found here](https://developer.mozilla.org/en-US/docs/Mozilla/Testing/Valgrind)
 
 
