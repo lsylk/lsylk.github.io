@@ -1,6 +1,12 @@
 ---
 layout: default
 ---
+<div class="notes">
+  {% for note in site.notes %}
+    <h2>{{ note.title }} - {{ note.date }}</h2>
+    <p>{{ note.content | markdownify }}</p>
+  {% endfor %}
+</div>
 
 <div class="posts">
   {% for post in paginator.posts %}
