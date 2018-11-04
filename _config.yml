@@ -13,6 +13,7 @@ webmentions: yes
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://hag.codes" # the base hostname & protocol for your site
+root: "http://hag.codes" # the base hostname & protocol for your site
 twitter_username: ioctaptceb
 github_username:  codehag
 collections:
