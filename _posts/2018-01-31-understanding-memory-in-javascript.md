@@ -4,7 +4,7 @@ title: "Understanding Memory in JavaScript"
 tags:
  - javascript
  - memory
-date: 2018-1-31
+date: 2018-01-31
 ---
 
 I had some nice feedback regarding yesterdays post. It wasn't clear what memory allocation was or
