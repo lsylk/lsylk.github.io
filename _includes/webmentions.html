@@ -1,7 +1,7 @@
 <script id="webmention-hosted">
 $(function(){
 $.getJSON("https://webmention.io/api/mentions?jsonp=?", {
-target: "http://hag.codes"
+target: `${encodeURIComponent(window.location)}`
 }, function(data){
 console.log(data);
 });
