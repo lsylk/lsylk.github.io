@@ -3,7 +3,6 @@ description:
 show_downloads: false
 plugins:
   - jekyll-feed
-  - github-pages
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-gist
