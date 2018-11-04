@@ -2,7 +2,7 @@
 $(function(){
 const url = document.querySelector("link[rel~=canonical]");
 $.getJSON("https://webmention.io/api/mentions?jsonp=?", {
-target: `${encodeURIComponent(window.location)}`
+target: `window.location}`
 }, function(data){
   console.log(data);
   data.links.forEach(addMention);
