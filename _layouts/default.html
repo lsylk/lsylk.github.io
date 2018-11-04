@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+	<link rel="stylesheet" href= "{{ relative_url }}/css/main.css">
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.github.url | prepend: site.url }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.github.url | prepend: site.url }}">
+	{% if site.webmentions %}
+	<link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
+	{% endif %}
+	{% seo %}
+</head>
+
+<body
+	{% if page.layout == "default" %}
+		class="h-feed"
+	{% endif %}
+>
+
+	<header class="site-header" role="banner">
+		<a class="site-title" href="{{ site.url }}/">{{ site.title }}</a>
+		<nav class="site-nav" role="navigation">
+			<ul>
+				{% assign pages_list = site.pages %}
+      	 {% for node in pages_list %}
+         {% if node.title != null %}
+         {% if node.layout == "page" %}
+				 <li itemprop="url"><a  class="{% if page.url == node.url %} active{% endif %}" href="{{
+             node.url }}">"{{ node.title }}"</a></li>
+				 {% endif %}
+	 {% endif %}
+ {% endfor %}
+			</ul>
+		</nav>
+	</header>
+	{% if page.url == '/' %}
+	{% include hcard.html %}
+	{% endif %}
+	<div id="wrapper">
+		<main role="main">
+			<div class="content">
+				{{ content }}
+			</div>
+		</main>
+
+	</div>
+	<footer class="site-footer" role="contentinfo">
+<p>
+	Built with <a href="https://github.com/miklb/jekyll-indieweb">Jekyll</a> on <a href="https://indiewebcamp.com">IndieWeb principles</a>
+</p>
+	</footer>
+</body>
+
+</html>

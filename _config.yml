@@ -1,5 +1,28 @@
 title: Hello
 description:
 show_downloads: false
-google_analytics:
-theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - github-pages
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-gist
+
+# Webmentions - leave blank (remove "yes") if you would not like to receive & display webmentions from other sites
+webmentions: yes
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://hag.codes" # the base hostname & protocol for your site
+twitter_username: ioctaptceb
+github_username:  codehag
+
+# Can be over ridden with author: in Front Matter
+author: Yulia
+
+# Expecting a full url, not relative to site.url
+author_img: https://avatars3.githubusercontent.com/u/3083652
+
+# Build settings
+markdown: kramdown
+
+paginate: 5
