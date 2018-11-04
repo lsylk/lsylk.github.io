@@ -14,7 +14,7 @@ function addMention({data, activity}) {
   const mention = document.createElement("div");
   author.innerHTML =
     `<p><a href=${data.author.url}>${data.author.name}
-    </a>${activity.type === "like" ? "<3" : "..."</p>`;
+    </a>${activity.type === "like" ? "<3" : "..." }</p>`;
   mention.innerHTML = data.content
   console.log(author, mention);
   const parentNode = document.querySelector(".content");
