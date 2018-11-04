@@ -38,12 +38,15 @@
     </ul>
   {% endif %}
 
-  <div class="e-content">
-    {% if post.content %}
-      {{ post.content }}
-    {% else %}
-      {{ content }}
-    {% endif %}
+  <div class="h-entry">
+    <div class="e-content">
+      {% if post.content %}
+        {{ post.content }}
+      {% else %}
+        {{ content }}
+      {% endif %}
+    </div>
+    <a href="https://brid.gy/publish/twitter"></a>
   </div>
 
   {% if post.mf-syndication != null %}
