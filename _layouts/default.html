@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href= "{{ relative_url }}/css/main.css">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.github.url | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.github.url | prepend: site.url }}">
+  <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+  <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
 	{% if site.webmentions %}
 	<link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
 	{% endif %}
@@ -32,8 +34,7 @@
       	 {% for node in pages_list %}
          {% if node.title != null %}
          {% if node.layout == "page" %}
-				 <li itemprop="url"><a  class="{% if page.url == node.url %} active{% endif %}" href="{{
-             node.url }}">"{{ node.title }}"</a></li>
+				 <li itemprop="url"><a  class="{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a></li>
 				 {% endif %}
 	 {% endif %}
  {% endfor %}
