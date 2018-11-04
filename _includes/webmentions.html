@@ -1,8 +1,8 @@
 <script id="webmention-hosted">
 $(function(){
-const url = document.querySelector("link[rel~=canonical]");
+const url = document.querySelector("link[rel~=canonical]").href;
 $.getJSON("https://webmention.io/api/mentions?jsonp=?", {
-target: `window.location}`
+target: url
 }, function(data){
   console.log(data);
   data.links.forEach(addMention);
