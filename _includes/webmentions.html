@@ -15,7 +15,7 @@ function addMention({data}) {
   author.innerHTML =
     `<p><a href=${data.author.url}><img src=${data.author.photo}/>
     </a></p>`;
-  mention.innerHTML = data.activity.sentence_html
+  mention.innerHTML = data.content
   console.log(author, mention);
   const parentNode = document.querySelector(".content");
   console.log(parentNode);
