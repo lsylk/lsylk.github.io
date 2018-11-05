@@ -39,6 +39,17 @@
     </ul>
   {% endif %}
 
+{% if post.mf-repost-of != null %}
+      <h3>Repost:</h3>
+    <ul>
+      {% for repost in post.mf-repost-of %}
+        <li>
+          <a class="u-repost-of" href="{{post.mf-repost-of | first}}">{{post.mf-repost-of}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
   <div class="h-entry">
     <div class="e-content">
       {% if post.content %}
