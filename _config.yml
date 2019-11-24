@@ -12,14 +12,14 @@ webmentions: yes
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://lsylk.github.io" # the base hostname & protocol for your site
-root: "http:/lsylk.github.io" # the base hostname & protocol for your site
+root: "http://lsylk.github.io" # the base hostname & protocol for your site
 github_username:  lsylk
 collections:
   notes:
     output: true
 
 # Can be over ridden with author: in Front Matter
-author: Yulia
+author: lsylk
 
 # Expecting a full url, not relative to site.url
 author_img: https://avatars3.githubusercontent.com/u/3083652
